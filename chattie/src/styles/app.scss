@@ -1,0 +1,173 @@
+$backgroundColor: blue;
+$defaultColor: white;
+$boxShadow: 0 0 10px 1px rgba(0, 0, 0, 0.7);
+$authBtnBackgroundColor: rgb(0, 187, 93);
+$colorOnWhiteBackground: #444;
+$borderRadius: 10px;
+$borderRadiusMed: 8px;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+
+  font-family: "Ubuntu";
+}
+
+body,
+html {
+  color: $defaultColor;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+div.chattie {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  div.auth-header {
+    background: #fff !important;
+    border-bottom: 1px solid $colorOnWhiteBackground !important;
+    color: $colorOnWhiteBackground !important;
+  }
+  div.main-content {
+    flex-grow: 1;
+  }
+
+  div.header {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    padding: 0 0.9em;
+    justify-content: space-between;
+    background: slateblue;
+    color: #fff;
+    div.header-right {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+div.auth-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+  vertical-align: center;
+  .message {
+    h1 {
+      font-size: 4em;
+    }
+
+    p {
+      font-size: 0.8em;
+    }
+  }
+
+  //   auth box
+  div.auth-box {
+    background: #fff;
+    box-shadow: $boxShadow;
+    transition: height 0.5s;
+    width: 350px;
+    margin-left: 20px;
+    border-radius: $borderRadius;
+    padding: 1em 1em;
+    padding-bottom: 5px;
+    color: $colorOnWhiteBackground;
+    align-self: flex-start;
+
+    .input-field {
+      padding: 1.3em 0.5em;
+      padding-right: 0;
+      margin-bottom: 5px;
+      border: 0;
+      border: 1px solid #888;
+      width: 100%;
+      border-radius: 5px;
+      border-radius: $borderRadiusMed;
+
+      &:focus {
+        border: 1px solid dodgerblue;
+      }
+    }
+
+    .auth-btn {
+      padding: 1.2em 0;
+      display: block;
+      width: 100%;
+      border: 0;
+      background: $authBtnBackgroundColor;
+      color: $defaultColor;
+      cursor: pointer;
+      border-radius: $borderRadiusMed;
+    }
+
+    .title {
+      margin-bottom: 5px;
+    }
+
+    .switch-auth {
+      background: transparent;
+      margin-top: 5px;
+      padding: 0 5px;
+      font-weight: bold;
+    }
+  }
+}
+
+div.loading {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  background: slateblue;
+}
+// active users
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  border-radius: 50%;
+  height: 64px;
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 6px;
+  width: 13px;
+  background: #fff;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 6px;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 26px;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 45px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 6px;
+    height: 51px;
+  }
+  50%,
+  100% {
+    top: 19px;
+    height: 26px;
+  }
+}

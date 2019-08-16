@@ -1,0 +1,338 @@
+$mainColor: #333;
+$containerPaddingTop: 5px;
+$whiteBackground: white;
+$borderColor: rgba(0, 0, 0, 0.2);
+$padding: 0 0.8em;
+
+.main {
+  color: $mainColor;
+  display: flex;
+  background: #fff;
+  height: calc(100vh - 50px);
+  .contact-list {
+    width: 250px;
+    padding: $padding;
+    padding-left: 0.3em;
+    padding-right: 0;
+    padding-top: $containerPaddingTop;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #444;
+      border-radius: 5px;
+    }
+    div.friend-list {
+      display: flex;
+      flex-direction: column;
+
+      div.friends {
+        border-bottom: 1px solid $borderColor;
+        justify-self: flex-start;
+
+        /* Handle on hover */
+
+        div.friend {
+          display: flex;
+          align-items: center;
+          margin-bottom: 5px;
+
+          div.img-container {
+            margin-right: 10px;
+            height: 45px;
+            width: 45px;
+            background: #efefef;
+            border-radius: 50%;
+            img {
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+      div.groups {
+        height: 50%;
+        padding-bottom: 20px;
+
+        /* Handle on hover */
+        div.group-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-right: 5px;
+        }
+        div.group {
+          display: flex;
+          align-items: center;
+          margin-bottom: 5px;
+          div.img-container {
+            margin-right: 10px;
+            height: 45px;
+            width: 45px;
+            background: #efefef;
+            border-radius: 50%;
+            img {
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .chat-ground {
+    flex: 1;
+    max-height: 100%;
+    align-self: flex-start;
+    padding-top: $containerPaddingTop;
+    display: flex;
+    flex-direction: column;
+    .chat-head {
+      height: 50px;
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.06);
+      z-index: 20;
+      padding: 0 0.5em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // change to shadow
+
+      div.chat-head-left {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        div.img-container {
+          border-radius: 50%;
+          height: 45px;
+          width: 45px;
+          background: #efefef;
+          img {
+            border-radius: 50%;
+          }
+        }
+        div {
+          padding-left: 0.3em;
+          h6 {
+            color: green;
+          }
+        }
+      }
+
+      div.chat-head-right {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        i {
+          padding: 0 0.6em;
+          color: dodgerblue;
+        }
+      }
+    }
+
+    .chat-conversation {
+      overflow-y: auto;
+      padding: 10px 0.8em;
+      flex-grow: 1;
+      justify-self: stretch;
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 5px;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: #444;
+        border-radius: 10px;
+      }
+
+      /* Handle on hover */
+
+      .msg-user {
+        display: flex;
+        justify-content: flex-end;
+        div.img-container {
+          align-self: flex-start;
+          margin-left: 8px;
+          border-radius: 50%;
+          margin-left: 5px;
+          img {
+            border-radius: 50%;
+            width: 100%;
+          }
+        }
+        div {
+          p {
+            background: #ccc;
+            border-radius: 10px;
+            padding: 0.5em 0.5em;
+          }
+          span {
+            font-size: 0.7em;
+            display: block;
+          }
+        }
+      }
+
+      .msg-friend {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+        div.img-container {
+          align-self: flex-start;
+          margin-right: 5px;
+          border-radius: 50%;
+          img {
+            border-radius: 50%;
+          }
+        }
+        div {
+          p {
+            background: dodgerblue;
+            position: relative;
+            color: #fff;
+            border-radius: 10px;
+            padding: 0.5em 0.5em;
+            padding-left: 10px;
+            line-height: 1.3em;
+            &::after {
+              position: absolute;
+              content: "";
+              height: 0;
+              width: 0;
+              border-right: 10px solid dodgerblue;
+              left: -16px;
+              top: 4px;
+              border-left: 10px solid transparent;
+              border-top: 10px solid transparent;
+              border-bottom: 10px solid transparent;
+              z-index: 100;
+            }
+          }
+          span {
+            font-size: 0.7em;
+            display: block;
+            text-align: right;
+          }
+        }
+      }
+      .msg-user,
+      .msg-friend {
+        img {
+          border-radius: 50%;
+          margin-bottom: 15px;
+        }
+        div {
+          display: flex;
+          flex-direction: column;
+          max-width: 300px;
+          padding: 0 0.5em;
+
+          p {
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+
+    .chat-sender {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 0.5em;
+      padding-bottom: 10px;
+      z-index: 11010;
+      div.sender-container {
+        width: 100%;
+        display: flex;
+        padding: 0 0.8em;
+        align-items: center;
+        align-content: center;
+        background: #fff;
+        border-radius: 30px;
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+        textarea {
+          padding-top: 1em;
+          flex-grow: 1;
+          resize: none;
+          overflow: hidden;
+          font-size: 0.9em;
+          background: transparent;
+          color: #333;
+        }
+        div.actions {
+          box-shadow: none;
+          button {
+            padding: 1.2em 1em;
+            color: dodgerblue;
+            background: transparent;
+            font-weight: bolder;
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+
+  .active {
+    width: 250px;
+    padding: $padding;
+    padding-top: $containerPaddingTop;
+    div.active-friends-list {
+      padding-top: 5px;
+      div.active-friend {
+        display: flex;
+        align-items: center;
+        padding: 2px 0;
+        div.img-container {
+          position: relative;
+          height: 45px;
+          width: 45px;
+          border-radius: 50%;
+          padding: 0;
+          background: #efefef;
+          margin-right: 10px;
+          img {
+            border-radius: 50%;
+          }
+
+          span {
+            position: absolute;
+            height: 10px;
+            width: 10px;
+            background: green;
+            right: -2px;
+            top: 50%;
+            z-index: 1000;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  input {
+    border: 1px solid #ccc;
+    padding: 10px 0.8em;
+    border-radius: 8px;
+    width: 100% !important;
+
+    &:focus {
+      border: 1px solid dodgerblue;
+    }
+  }
+}

@@ -1,0 +1,223 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  font-family: "Ubuntu";
+}
+
+body,
+html {
+  color: white;
+}
+
+body img,
+html img {
+  border-radius: 50%;
+}
+
+div.chattie {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div.chattie div.auth-header {
+  background: #fff !important;
+  border-bottom: 1px solid #444 !important;
+  color: #444 !important;
+}
+
+div.chattie div.main-content {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+div.chattie div.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 0.9em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: slateblue;
+  color: #fff;
+}
+
+div.chattie div.header div.header-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.auth-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 80px;
+  vertical-align: center;
+}
+
+div.auth-container .message h1 {
+  font-size: 4em;
+}
+
+div.auth-container .message p {
+  font-size: 0.8em;
+}
+
+div.auth-container div.auth-box {
+  background: #fff;
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.7);
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+  width: 350px;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 1em 1em;
+  padding-bottom: 5px;
+  color: #444;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+div.auth-container div.auth-box .input-field {
+  padding: 1.3em 0.5em;
+  padding-right: 0;
+  margin-bottom: 5px;
+  border: 0;
+  border: 1px solid #888;
+  width: 100%;
+  border-radius: 5px;
+  border-radius: 8px;
+}
+
+div.auth-container div.auth-box .input-field:focus {
+  border: 1px solid dodgerblue;
+}
+
+div.auth-container div.auth-box .auth-btn {
+  padding: 1.2em 0;
+  display: block;
+  width: 100%;
+  border: 0;
+  background: #00bb5d;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+div.auth-container div.auth-box .title {
+  margin-bottom: 5px;
+}
+
+div.auth-container div.auth-box .switch-auth {
+  background: transparent;
+  margin-top: 5px;
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+div.loading {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fff;
+  background: slateblue;
+}
+
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  border-radius: 50%;
+  height: 64px;
+}
+
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 6px;
+  width: 13px;
+  background: #fff;
+  -webkit-animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+          animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+  left: 6px;
+  -webkit-animation-delay: -0.24s;
+          animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+  left: 26px;
+  -webkit-animation-delay: -0.12s;
+          animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+  left: 45px;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+}
+
+@-webkit-keyframes lds-facebook {
+  0% {
+    top: 6px;
+    height: 51px;
+  }
+  50%,
+  100% {
+    top: 19px;
+    height: 26px;
+  }
+}
+
+@keyframes lds-facebook {
+  0% {
+    top: 6px;
+    height: 51px;
+  }
+  50%,
+  100% {
+    top: 19px;
+    height: 26px;
+  }
+}
+/*# sourceMappingURL=app.css.map */
